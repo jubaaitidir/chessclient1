@@ -1,4 +1,4 @@
-console.log("DEBUT : Morpion1.js");
+console.log("DEBUT : chess-client1.js");
 
 let N = 10;
 let morpionOuPas = document.getElementById("chess");
@@ -100,30 +100,33 @@ let chessBoard = [['TN','CN','FN','QN','KN','FN','CN','TN'],
                   ['TB','CB','FB','QB','KB','FB','CB','TB']
                 ];
              
-// const displaySymbol = new Map();
-// displaySymbol.set('', 'V');
-// displaySymbol.set('TN', '&#9820;');
-// displaySymbol.set('CN', '&#9822;');
-// displaySymbol.set('FN', '&#9821;');
-// displaySymbol.set('QN', '&#9819;');
-// displaySymbol.set('KN', '&#9818;');
-// displaySymbol.set('PN', '&#9823;');
-// displaySymbol.set('TB', '&#9814;');
-// displaySymbol.set('CB', '&#9816;');
-// displaySymbol.set('FB', '&#9815;');
-// displaySymbol.set('QB', '&#9813;');
-// displaySymbol.set('KB', '&#9812;');
-// displaySymbol.set('PB', '&#9817;');
+const displaySymbol = new Map();
+displaySymbol.set('', '');
+displaySymbol.set('TN', '&#9820;');
+displaySymbol.set('CN', '&#9822;');
+displaySymbol.set('FN', '&#9821;');
+displaySymbol.set('QN', '&#9819;');
+displaySymbol.set('KN', '&#9818;');
+displaySymbol.set('PN', '&#9823;');
+displaySymbol.set('TB', '&#9814;');
+displaySymbol.set('CB', '&#9816;');
+displaySymbol.set('FB', '&#9815;');
+displaySymbol.set('QB', '&#9813;');
+displaySymbol.set('KB', '&#9812;');
+displaySymbol.set('PB', '&#9817;');
 
 function displayChess(){
     for(let l = 1; l <9 ; l++){
         for(let c = 1; c <9; c++){
             //console.log(`${colonneID[c]}${ligneID[l]}`);
             let caseHTML = document.getElementById(`${colonneID[c]}${ligneID[l]}`);
-            caseHTML.innerText = (chessBoard[l-1][c-1]);
-            // A TROUVER
-            //caseHTML.innerText = 0x01;; displaySymbol.get((chessBoard[l-1][c-1]));
-        }
+            //caseHTML.innerText = (chessBoard[l-1][c-1]);
+            caseHTML.innerHTML = displaySymbol.get((chessBoard[l-1][c-1]));
+
+            if(chessBoard[l-1][c-1] === 'PN') {
+                caseHTML.innerHTML= "<img src='./img/PN2.png' width=30 height=30>";
+            }
+         }
     }
 }
 displayChess();
@@ -150,4 +153,4 @@ displayChess();
 
 // caseMorpion.addEventListener('click',quandOnclique);
 
-console.log("FIN : Morpion1.js");
+console.log("FIN : chess-client1.js");
