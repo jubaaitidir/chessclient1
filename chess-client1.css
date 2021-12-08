@@ -39,3 +39,23 @@ td {
 #morpion{
 background-color: lightskyblue;
 }
+
+#move_piece{
+    display: inline-flexbox;
+}
+
+#from{
+    margin-right: 15px;
+}
+
+#players_container{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.player1{
+    
+}
+.player2{
+    
+}

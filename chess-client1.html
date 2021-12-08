@@ -10,10 +10,33 @@
 
 <body>
     <h1>Chess Client 1</h1>
+    <div id="players_container">
+        <div id="player1" class="player">
+            <h2>Player white</h2>
+            <label id="from_label">from : </label>
+            <input type="text" id="from_white_player" name="from" required minlength="2" maxlength="2" size="2">
+            <label id="to_label">to : </label>
+            <input type="text" id="to_white_player" name="to" required minlength="2" maxlength="2" size="2">
+            <button type="submit" name="jouer" onclick="move()">Jouer</button>
+        </div>
+        <div id="player2" class="player">
+            <h2>Player black</h2>
+            <label id="from_label">from : </label>
+            <input type="text" id="from_black_player" name="from" required minlength="2" maxlength="2" size="2">
+            <label id="to_label">to : </label>
+            <input type="text" id="to_black_player" name="to" required minlength="2" maxlength="2" size="2">
+            <button type="submit" name="jouer" onclick="move()">Jouer</button>
+        </div>
+        
+        
+    </div>
+    <hr>
     <div id="chess">
+   
     </div>
 
-    <script src="./chess-client1.js"> </script>
+    <script src="./chess-client1.js"></script>
+
 </body>
 
 </html>
